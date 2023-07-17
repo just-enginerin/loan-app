@@ -1,0 +1,17 @@
+/*
+  Title: app.component.css
+  Author: Erin Brady
+  Date: 15 July 2023
+  Description: Layout styles
+*/
+
+.toolbar {
+  background-color: var(--dark);
+}
+
+.main-container {
+  padding-top: 25px;
+  width: 80%;
+  margin: 0 auto;
+  background-color: var(--primary);
+}

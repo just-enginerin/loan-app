@@ -1,0 +1,26 @@
+/*
+  Title: contact.component.css
+  Author: Erin Brady
+  Date: 15 July 2023
+  Description: Contact page styles
+*/
+
+.contact-section {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.icon-credit {
+  text-align: center;
+}
+
+.contact-icon {
+  width: 100px;
+  font-size: 110px;
+}
+
+.attribution-link {
+  text-align: center;
+  font-size: 10px;
+}
