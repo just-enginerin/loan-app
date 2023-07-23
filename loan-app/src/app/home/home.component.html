@@ -1,1 +1,54 @@
-<p>home works!</p>
+<!--
+  Title: home.component.html
+  Author: Erin Brady
+  Date: 22 July 2023
+  Description: Home / Loan Calculator HTML
+-->
+
+<div fxLayout="row wrap" fxLayoutGap="20px">
+
+  <div fxFlex class="loan-form">
+    <mat-card>
+      <mat-card-title>Welcome to Slytherin Loans' Loan Application</mat-card-title>
+
+      <mat-card-content>
+        <form fxLayout="column" fxLayoutGap="16px" [formGroup]="loanForm" (ngSubmit)="onSubmit($event);">
+
+          <mat-form-field fxFlex appearance="fill">
+            <mat-label>Loan Amount</mat-label>
+            <input matInput type="number" name="principle" id="principle" matInput formControlName="principle" [value]="this.loanEntry.principle" />
+          </mat-form-field>
+
+          <mat-form-field fxFlex appearance="fill">
+            <mat-label>Interest Rate</mat-label>
+            <input matInput type="number" name="interestRate" id="interestRate" formControlName="interestRate" [value]="this.loanEntry.interestRate"/>
+          </mat-form-field>
+
+          <mat-form-field fxFlex appearance="fill">
+            <mat-label>Number of Years</mat-label>
+            <input matInput type="number" name="numOfYears" id="numOfYears" formControlName="numOfYears" [value]="this.loanEntry.numOfYears"/>
+          </mat-form-field>
+
+          <button mat-raised-button type="submit" [disabled]="!loanForm.valid" color="primary">Submit Loan Application</button>
+        </form>
+      </mat-card-content>
+    </mat-card>
+  </div>
+
+  <div class="loan-summary" fxFlex>
+
+    <mat-card class="mat-elevation-z8">
+
+      <mat-card-title class="summary-label">Your Monthly Payment:</mat-card-title>
+      <mat-card-content class="summary-content">
+        ${{monthlyPayment.toFixed(2)}}
+      </mat-card-content>
+      <br> <br>
+      <mat-card-title class="summary-label">Interest Paid:</mat-card-title>
+      <mat-card-content class="summary-content">
+        ${{totalInterest.toFixed(2)}}
+      </mat-card-content>
+
+    </mat-card>
+  </div>
+</div>
